@@ -1,0 +1,30 @@
+{
+    "name": "antoinelemaire/braze-php",
+    "description": "Braze API client built on top of Guzzle 6",
+    "keywords": ["braze", "braze.eu", "api", "guzzle"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "AntoineLemaire",
+            "homepage": "https://github.com/AntoineLemaire"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Braze\\": ["src"]
+        }
+    },
+    "require": {
+        "php": ">= 7.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "~7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*",
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "apcu-autoloader": true
+    }
+}
