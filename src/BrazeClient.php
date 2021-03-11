@@ -4,6 +4,7 @@ namespace Braze;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use function GuzzleHttp\Psr7\stream_for;
 use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\ResponseInterface;
 
@@ -142,7 +143,11 @@ class BrazeClient
      */
     private function handleResponse(ResponseInterface $response)
     {
-        $stream = Utils::streamFor($response->getBody());
+        if (class_exists(Utils::class)) {
+            $stream = Utils::streamFor($response->getBody());
+        } else {
+            $stream = stream_for($response->getBody());
+        }
 
         return json_decode($stream);
     }
