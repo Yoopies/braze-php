@@ -135,7 +135,7 @@ class BrazeClient
      */
     private function getUri(): string
     {
-        return 'https://'.$this->baseUri;
+        return 'https://'.$this->baseUri.'/';
     }
 
     /**
