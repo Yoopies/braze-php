@@ -5,11 +5,11 @@ namespace Braze;
 use GuzzleHttp\Exception\GuzzleException;
 
 /**
- * Class BrazeUserData.
+ * Class BrazeUser.
  *
  * @see https://www.braze.com/docs/api/interactive/#/User_Data
  */
-class BrazeUserData
+class BrazeUser
 {
     const BASE_ENDPOINT = 'users';
 
@@ -34,15 +34,15 @@ class BrazeUserData
     }
 
     /**
-     * User Track Event.
+     * Identify User.
      *
      * @throws GuzzleException
      *
      * @return mixed
      */
-    public function trackEvents(array $options = [])
+    public function identify(array $options = [])
     {
-        return $this->client->post(self::BASE_ENDPOINT.'/track/events', $options);
+        return $this->client->post(self::BASE_ENDPOINT.'/track/identify', $options);
     }
 
     /**

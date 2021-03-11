@@ -18,8 +18,8 @@ class BrazeClient
     /** @var string API ID authentication */
     private $apiKey;
 
-    /** @var BrazeUserData */
-    public $userData;
+    /** @var BrazeUser */
+    public $user;
 
     /** @var string */
     private $baseUri;
@@ -31,7 +31,7 @@ class BrazeClient
         $this->apiKey = $apiKey;
         $this->baseUri = $endpoint ?? self::BASE_URI;
 
-        $this->userData = new BrazeUserData($this);
+        $this->user = new BrazeUser($this);
     }
 
     private function setDefaultClient()

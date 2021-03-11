@@ -12,10 +12,22 @@ composer require antoinelemaire/braze-php
 ```
 
 ## Usage
-### Client
 
 ```php
 use Braze\BrazeClient;
 
 $client = new BrazeClient('apiKey', 'rest.fra-01.braze.eu');
+
+$client->user->track(
+    [
+        'events' => [
+            [
+                '_update_existing_only' => false,
+                'name'                  => 'my_event_name',
+                'external_id'           => '1234',
+                'time'                  => (new \DateTime())->format('c'),
+            ],
+        ],
+    ]
+);
 ```
