@@ -1,5 +1,5 @@
 {
-    "name": "antoinelemaire/braze-php",
+    "name": "yoopies/braze-php",
     "description": "Braze API client built on top of Guzzle 6|7",
     "keywords": ["braze", "braze.eu", "api", "guzzle"],
     "license": "Apache-2.0",

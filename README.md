@@ -8,7 +8,7 @@ The recommended way to install braze-php is through [Composer](https://getcompos
 
 
 ```
-composer require antoinelemaire/braze-php
+composer require yoopies/braze-php
 ```
 
 ## Usage
