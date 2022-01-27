@@ -121,6 +121,7 @@ class BrazeClient
         $headers = [
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
+            'User-Agent' => 'braze-client php',
         ];
 
         if (!empty($this->apiKey)) {
