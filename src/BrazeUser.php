@@ -64,14 +64,34 @@ class BrazeUser
      *
      * @return mixed
      */
-    public function addAlias(string $externalIds, string $aliasName, string $aliasLabel)
+    public function addAlias(string $externalId, string $aliasName, string $aliasLabel)
     {
         return $this->client->post(self::BASE_ENDPOINT.'/alias/new', [
             'user_aliases' => [
                 [
-                    'external_ids' => $externalIds,
+                    'external_id' => $externalId,
                     'alias_name' => $aliasName,
                     'alias_label' => $aliasLabel,
+                ],
+            ],
+        ]);
+    }
+
+    /**
+     * Update existing user alias.
+     *
+     * @throws GuzzleException
+     *
+     * @return mixed
+     */
+    public function updateAlias(string $aliasLabel, string $oldAliasName, string $newAliasName)
+    {
+        return $this->client->post(self::BASE_ENDPOINT.'/alias/update', [
+            'alias_updates' => [
+                [
+                    'alias_label' => $aliasLabel,
+                    'old_alias_name' => $oldAliasName,
+                    'new_alias_name' => $newAliasName,
                 ],
             ],
         ]);
