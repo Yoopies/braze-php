@@ -86,7 +86,7 @@ class BrazeUser
      */
     public function updateAlias(string $aliasLabel, string $oldAliasName, string $newAliasName)
     {
-        return $this->client->post(self::BASE_ENDPOINT.'/alias/new', [
+        return $this->client->post(self::BASE_ENDPOINT.'/alias/update', [
             'alias_updates' => [
                 [
                     'alias_label' => $aliasLabel,
